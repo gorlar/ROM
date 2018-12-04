@@ -1,12 +1,3 @@
-TEMA ZA PROJEKT PRI PREDMETU ROM
-
-Za temo si bom izbrala nalogo iz predmeta Linearna algebra. Naloga bo vsebovala osnovno 3D
-telo (piramida/tetraeder ali kvader). S podanimi komponentami jih bom v programu izrisala in
-določila radij, normale vektorjev in višino telesa. Projekt bo povezan z osnovnimi 3D telesi in
-najpomembnejših funkcij teh. V telo bom vrisala premico s poljubno enačbo y = kx + n in
-izračunala presečišče. S pomočjo grafične animacije bom prikazala smer normale.
-
-
 Rezervirala sem si naslednje naloge
 ### [Uèni list - Naravna in cela števila.pdf](https://www.sc-nm.si/sss/si/file/download/861_0affa8c3752b/U%C4%8Dni%20list%20-%20Naravna%20in%20cela%20%C5%A1tevila.pdf)
 - 24
