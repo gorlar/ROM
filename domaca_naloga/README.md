@@ -23,8 +23,4 @@ Rezervirala sem si naslednje naloge
 
 # TEMA ZA PROJEKT PRI PREDMETU ROM
 
-### Za temo si bom izbrala nalogo iz predmeta Linearna algebra. Naloga bo vsebovala osnovno 3D
-telo (piramida/tetraeder ali kvader). S podanimi komponentami jih bom v programu izrisala in
-določila radij, normale vektorjev in višino telesa. Projekt bo povezan z osnovnimi 3D telesi in
-najpomembnejših funkcij teh. V telo bom vrisala premico s poljubno enačbo y = kx + n in
-izračunala presečišče. S pomočjo grafične animacije bom prikazala smer normale.
+### Za temo si bom izbrala nalogo iz predmeta Linearna algebra. Naloga bo vsebovala osnovno 3D telo (piramida/tetraeder ali kvader). S podanimi komponentami jih bom v programu izrisala in določila radij, normale vektorjev in višino telesa. Projekt bo povezan z osnovnimi 3D telesi in najpomembnejših funkcij teh. V telo bom vrisala premico s poljubno enačbo y = kx + n in izračunala presečišče. S pomočjo grafične animacije bom prikazala smer normale.
