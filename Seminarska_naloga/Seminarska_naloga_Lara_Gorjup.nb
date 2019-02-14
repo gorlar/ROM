@@ -1,0 +1,1632 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     62447,       1624]
+NotebookOptionsPosition[     50533,       1430]
+NotebookOutlinePosition[     50893,       1446]
+CellTagsIndexPosition[     50850,       1443]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["STATISTIKA PROMETNIH NESRE\[CapitalCHacek]",
+  FontSize->36,
+  Background->RGBColor[1, 0.925, 0.925]],
+ StyleBox["\n",
+  FontSize->36]
+}], "Title",
+ CellChangeTimes->{{3.7590588686430473`*^9, 3.759058912761355*^9}, 
+   3.759059728884767*^9, 3.759073712002123*^9},
+ TextAlignment->Center,ExpressionUUID->"45454fa3-faeb-43ef-8fc0-d98c4c8d50ff"],
+
+Cell[TextData[{
+ "Pri predmetu Ra\[CHacek]unalni\[SHacek]ka orodja v matematiki sem si za \
+seminarsko nalogo ob koncu semestra izbrala temo Statistika prometnih nesre\
+\[CHacek]. Zbrala bom statistiko o prometnih nesre\[CHacek]ah in jo \
+primerjala s statistiko prej\[SHacek]njih let, ter na koncu prikazala \
+rezultate. Prikazala bom tudi \[SHacek]tevilo smrtnih \[ZHacek]rtev in \
+\[SHacek]tevilo po\[SHacek]kodovancev glede na leto in primerjala med leti.  \
+Izra\[CHacek]unama bom tudi kak\[SHacek]no aritmeti\[CHacek]no sredino in \
+modus, ter geometrijsko sredino. Zelo pomembne so tudi posledice prometnih \
+nesre\[CHacek] ter vzroki, zato bom tudi ta del posebej omenila. \n\n",
+ StyleBox["Za za\[CHacek]etek, kaj sploh prometna nesre\[CHacek]a je?",
+  FontSize->14,
+  FontColor->GrayLevel[0]],
+ StyleBox[" ",
+  FontSize->16,
+  FontColor->GrayLevel[0]],
+ "Vsi nekako vemo, kaj pomeni in si, na podlagi lastnih videnj in izku\
+\[SHacek]enj, ustvarimo dolo\[CHacek]eno sliko. Po definiciji na wikipediji \
+je prometna nesre\[CHacek]a nesre\[CHacek]a na javni cesti in \
+nekategorizirani cesti, ki je dana v uporabo za cestni promet, v kateri je \
+bilo udele\[ZHacek]eno vsaj eno premikajo\[CHacek]e se vozilo in je v njej \
+ena ali ve\[CHacek] oseb umrlo, bilo telesno po\[SHacek]kodovanih ali je \
+nastala gmotna \[SHacek]koda. Seveda ozna\[CHacek]ujemo besedno zvezo \
+prometna nesre\[CHacek]a tudi za \[SHacek]e ve\[CHacek] pojmov, ki pa niso \
+povezani le z avtomobili in stanjem na cestah. V moji seminrski nalogi se bom \
+osredoto\[CHacek]ila le na prometne nesre\[CHacek]e na cestah in razna \
+razmerja, povezana s tem. \n\n"
+}], "Text",
+ CellChangeTimes->{{3.759058962496778*^9, 3.759059309504661*^9}, {
+   3.7590593445820847`*^9, 3.75905935311944*^9}, {3.7590593954714813`*^9, 
+   3.7590595383322897`*^9}, {3.759059576753997*^9, 3.7590595849164953`*^9}, {
+   3.759060107639559*^9, 3.759060162438909*^9}, {3.759060205541572*^9, 
+   3.759060208430895*^9}, 3.759060302723073*^9, {3.759076487782052*^9, 
+   3.759076488048903*^9}, {3.759078574066493*^9, 3.7590786684205847`*^9}, {
+   3.759079547347633*^9, 3.7590795620993843`*^9}, 3.759082083341894*^9, {
+   3.759083581518854*^9, 
+   3.759083582598117*^9}},ExpressionUUID->"4fd7fafb-0195-4e11-876f-\
+3192476a0827"],
+
+Cell[TextData[StyleBox["PROMETNE NESRE\[CapitalCHacek]E PRIKAZANE OD LETA \
+2014 DO 2018",
+ FontSize->24,
+ FontColor->GrayLevel[0],
+ Background->RGBColor[0.9, 1, 1]]], "Text",
+ CellChangeTimes->{{3.7590764528813057`*^9, 3.7590764738886223`*^9}},
+ TextAlignment->Center,ExpressionUUID->"ca84aac7-2d58-4674-a6f7-52cf43a66219"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.759073826961357*^9, 3.759073873320847*^9}, 
+   3.759074440894093*^9},ExpressionUUID->"60da36c5-b5cb-4c5a-848d-\
+6c02dbcba80e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["\[CapitalSHacek]TEVILO PROMETNIH \
+NESRE\[CapitalCHacek]",
+ FontSize->20]], "Title",
+ CellChangeTimes->{{3.759078200018201*^9, 
+  3.7590782039291687`*^9}},ExpressionUUID->"60157ec6-d965-44ed-927f-\
+4a10909301e2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"prometnenesre\[CHacek]e2014", "=", "18251"}], "\[IndentingNewLine]", 
+ RowBox[{"prometnenesre\[CHacek]e2015", "=", "17943"}], "\[IndentingNewLine]", 
+ RowBox[{"prometnenesre\[CHacek]e2016", "=", "17931"}], "\[IndentingNewLine]", 
+ RowBox[{"prometnenesre\[CHacek]e2017", "=", "17584"}], "\[IndentingNewLine]", 
+ RowBox[{"prometnenesre\[CHacek]e2018", "=", 
+  "18098"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.759074901036809*^9, 3.759074968077724*^9}, {
+  3.7590777582337637`*^9, 
+  3.759077813914229*^9}},ExpressionUUID->"b06766d2-3d37-4929-8c3d-\
+dd37b4eb7751"],
+
+Cell[BoxData["18251"], "Output",
+ CellChangeTimes->{3.759074969086817*^9, 
+  3.759077814710943*^9},ExpressionUUID->"c790140d-2eed-41a0-b51e-\
+5b5f02a6c0c7"],
+
+Cell[BoxData["17943"], "Output",
+ CellChangeTimes->{3.759074969086817*^9, 
+  3.759077814723732*^9},ExpressionUUID->"ac44244c-e2cc-44ca-b845-\
+7696b1022902"],
+
+Cell[BoxData["17931"], "Output",
+ CellChangeTimes->{3.759074969086817*^9, 
+  3.759077814733725*^9},ExpressionUUID->"b874adde-7998-408a-a50a-\
+b8705b6191cf"],
+
+Cell[BoxData["17584"], "Output",
+ CellChangeTimes->{3.759074969086817*^9, 
+  3.759077814743647*^9},ExpressionUUID->"460ccd71-03bc-4a5a-be5e-\
+1d5e227a87d8"],
+
+Cell[BoxData["18098"], "Output",
+ CellChangeTimes->{3.759074969086817*^9, 
+  3.759077814753603*^9},ExpressionUUID->"742d0765-f5b5-443b-91d9-\
+5d5e5d33b4d7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListLinePlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "prometnenesre\[CHacek]e2014", ",", " ", "prometnenesre\[CHacek]e2015", 
+     ",", " ", "prometnenesre\[CHacek]e2016", ",", " ", 
+     "prometnenesre\[CHacek]e2017", ",", " ", "prometnenesre\[CHacek]e2018"}],
+     "}"}], ",", " ", 
+   RowBox[{"Filling", "\[Rule]", "Axis"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"RGBColor", "[", 
+     RowBox[{"1", ",", "0", ",", "0"}], "]"}]}], ",", 
+   RowBox[{"PlotLabels", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Placed", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<high\>\"", ",", "\"\<low\>\""}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Above", ",", " ", "Below"}], "}"}]}], "]"}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7590749833116083`*^9, 3.759075035997798*^9}, {
+  3.7590753019919558`*^9, 3.759075318559559*^9}, {3.759075375556766*^9, 
+  3.7590753786564007`*^9}, {3.759075615023059*^9, 3.7590756244408827`*^9}, {
+  3.75907623284339*^9, 
+  3.7590763998510303`*^9}},ExpressionUUID->"35dae181-febd-4000-a641-\
+2b602036457a"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   GraphicsComplexBox[{{1., 18251.}, {2., 17943.}, {3., 17931.}, {4., 
+    17584.}, {5., 18098.}, {1., 17550.65}, {5., 17550.65}}, {{{}, 
+      {RGBColor[1, 0, 0], Opacity[0.2], EdgeForm[None], 
+       GraphicsGroupBox[
+        PolygonBox[{{1, 6, 7, 5, 4, 3, 2}}]]}, {}, {}}, {{}, {}, 
+      {RGBColor[1, 0, 0], PointSize[0.019444444444444445`], AbsoluteThickness[
+       1.6], LineBox[{1, 2, 3, 4, 5}]}}}], {{}, {
+     InsetBox["\<\"high\"\>", Offset[{0, 2}, {1., 18251.}], 
+      ImageScaled[{0, 0}]], 
+     InsetBox["\<\"low\"\>", Offset[{0, -2}, {4., 17584.}], 
+      ImageScaled[{1, 1}]]}}, {{}, {}}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 17550.65},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 5.}, {17584., 18251.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.12666887276745953`], 
+     Scaled[0.13347150392467935`]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.759075314515478*^9, 3.759075319028627*^9}, 
+   3.7590753792261353`*^9, 3.7590756266848288`*^9, 3.7590762400330153`*^9, 
+   3.759076400694235*^9, 
+   3.759077817391492*^9},ExpressionUUID->"8161db5d-c871-449f-ae9b-\
+4cf9930ca483"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.759075450196382*^9, 
+  3.759075452057292*^9}},ExpressionUUID->"8fe4dd55-fabc-40ca-af0a-\
+a8ae9a539b3d"],
+
+Cell["\<\
+V zgornjem grafu sem prikazala \[SHacek]tevilo prometnih nesre\[CHacek] od \
+leta 2014 do 2018. Leta 2014 je bilo 18251 prometnih nesre\[CHacek], leta \
+2015 le bilo 17943 nesre\[CHacek]. Leta 2016 je bilo 17931 prometnih nesre\
+\[CHacek], leta 2017 je bilo, kot lahko vidimo na grafu, najmanj prometnih \
+nesre\[CHacek]. Bilo jih je 17584.Leta 2018 pa je nilo 18098 nesre\[CHacek]. \
+Najve\[CHacek] prometnih nesre\[CHacek] je bilo leta 2014, kar 18251. Na \
+grafu hitro opazimo tudi najvi\[SHacek]jo vrednost in najni\[ZHacek]jo \
+vrednost prometnih nesre\[CHacek].
+\
+\>", "Text",
+ CellChangeTimes->{{3.75907661169798*^9, 3.759076791718933*^9}, {
+  3.759077162217767*^9, 3.759077213725689*^9}, {3.7590778249810877`*^9, 
+  3.759077928893861*^9}},ExpressionUUID->"d3267405-b006-4fd2-9b34-\
+227ee3dd3125"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Mean", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "prometnenesre\[CHacek]e2014", ",", "prometnenesre\[CHacek]e2015", ",", 
+    "prometnenesre\[CHacek]e2016", ",", "prometnenesre\[CHacek]e2017", ",", 
+    "prometnenesre\[CHacek]e2018"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759079058394767*^9, 
+  3.759079084795532*^9}},ExpressionUUID->"3bcfcb97-dff9-4773-9e6e-\
+9f1902268366"],
+
+Cell[BoxData[
+ FractionBox["89807", "5"]], "Output",
+ CellChangeTimes->{
+  3.759079087527946*^9},ExpressionUUID->"95a154d2-58a3-45c7-b4f1-\
+a79fc4530a83"]
+}, Open  ]],
+
+Cell["\<\
+Izra\[CHacek]unala sem povpre\[CHacek]no vrednost vseh prometnih nesre\
+\[CHacek] od leta 2014 do leta 2018. Ta zna\[SHacek]a 44903,5. \
+Povpre\[CHacek]no se torje na leto zgodi toliko prometnih nesre\[CHacek] \
+(izra\[CHacek]unano na podlagi do sedanjih nesre\[CHacek]).\
+\>", "Text",
+ CellChangeTimes->{{3.759079129373384*^9, 
+  3.759079203556559*^9}},ExpressionUUID->"ed9e25eb-76bf-452d-b52a-\
+fde08ba52db1"],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{
+  3.759079376161306*^9},ExpressionUUID->"070629bf-e39c-4219-b6d1-\
+cac19c93b7a0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["\[CapitalSHacek]TEVILO SMRTNIH IZIDOV",
+ FontSize->20]], "Title",
+ CellChangeTimes->{{3.7590782313210363`*^9, 
+  3.759078237943811*^9}},ExpressionUUID->"514448f7-ff39-4e78-afa4-\
+70f603ca2096"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"smrtniizidi2014", "=", "108"}], "\[IndentingNewLine]", 
+ RowBox[{"smrtniizidi2015", "=", "120"}], "\[IndentingNewLine]", 
+ RowBox[{"smrtniizidi2016", "=", "130"}], "\[IndentingNewLine]", 
+ RowBox[{"smrtniizidi2017", "=", "104"}], "\[IndentingNewLine]", 
+ RowBox[{"smrtniizidi2018", "=", "91"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.7590772159732113`*^9, 3.759077275183281*^9}, {
+  3.759077305699209*^9, 
+  3.75907730891547*^9}},ExpressionUUID->"51094e99-f83d-4ce9-8a26-\
+8d6bf0098028"],
+
+Cell[BoxData["108"], "Output",
+ CellChangeTimes->{
+  3.759077309910322*^9},ExpressionUUID->"225e79ee-6927-4637-95e6-\
+39ed346216fb"],
+
+Cell[BoxData["120"], "Output",
+ CellChangeTimes->{
+  3.759077309914672*^9},ExpressionUUID->"4fecf11c-56fe-4611-94fa-\
+d249e52944e6"],
+
+Cell[BoxData["130"], "Output",
+ CellChangeTimes->{
+  3.7590773099189672`*^9},ExpressionUUID->"e60eb763-a098-41ca-85f6-\
+98177e076f58"],
+
+Cell[BoxData["104"], "Output",
+ CellChangeTimes->{
+  3.7590773099233637`*^9},ExpressionUUID->"2df29d3a-616e-49c3-ab40-\
+377077317f56"],
+
+Cell[BoxData["91"], "Output",
+ CellChangeTimes->{
+  3.75907730993113*^9},ExpressionUUID->"3a74878e-9ef1-45e1-b428-2894fb756203"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListLinePlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "smrtniizidi2014", ",", "smrtniizidi2015", ",", " ", "smrtniizidi2016", 
+     ",", " ", "smrtniizidi2017", ",", " ", "smrtniizidi2018"}], "}"}], ",", 
+   " ", 
+   RowBox[{"Filling", "\[Rule]", "Axis"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"RGBColor", "[", 
+     RowBox[{"0.5", ",", "0.12", ",", "0.84", ",", "0.61"}], "]"}]}], ",", 
+   RowBox[{"PlotLabels", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Placed", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<high\>\"", ",", "\"\<low\>\""}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Above", ",", " ", "Below"}], "}"}]}], "]"}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.759077325370038*^9, 
+  3.7590773722177067`*^9}},ExpressionUUID->"ce18ae21-0ece-4f30-87be-\
+9c4fccc3e563"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   GraphicsComplexBox[{{1., 108.}, {2., 120.}, {3., 130.}, {4., 104.}, {5., 
+    91.}, {1., 89.05000000000001}, {5., 89.05000000000001}}, {{{}, 
+      {RGBColor[0.5, 0.12, 0.84], Opacity[0.2], EdgeForm[None], 
+       GraphicsGroupBox[
+        PolygonBox[{{1, 6, 7, 5, 4, 3, 2}}]]}, {}, {}}, {{}, {}, 
+      {RGBColor[0.5, 0.12, 0.84], PointSize[0.019444444444444445`], 
+       AbsoluteThickness[1.6], Opacity[0.61], 
+       LineBox[{1, 2, 3, 4, 5}]}}}], {{}, {
+     InsetBox["\<\"high\"\>", Offset[{0, 2}, {3., 130.}], 
+      ImageScaled[{0.5, 0}]], 
+     InsetBox["\<\"low\"\>", Offset[{0, -2}, {5., 91.}], 
+      ImageScaled[{1, 1}]]}}, {{}, {}}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 89.05000000000001},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 5.}, {91., 130.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.04305555555555554]}, {
+     Scaled[0.12666887276745797`], 
+     Scaled[0.1334715039246801]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.759077373257243*^9},ExpressionUUID->"4875a928-7413-4cd9-8fd6-\
+800d33d63db5"]
+}, Open  ]],
+
+Cell["\<\
+
+V vijoli\[CHacek]no obarvanem grafu prikazujem \[SHacek]tevilo smrtnih izidov \
+v prometnih nesre\[CHacek]ah. To pomeni, da je na primer v letu 2017 med \
+vsemi 17584 prometnimi nesre\[CHacek]ami umrlo 104 ljudi in tako naprej za \
+vsako leto posebej. V preteklem letu je skupaj umrlo 81 ljudi, kar je dale\
+\[CHacek] najmanj v zadnjih petih letih. V primerjavi z letom 2017 je to -12, \
+5 % manj smrtnih \[ZHacek]rtev , v primerjavi z letom 2014 pa je kar -15, 7 \
+%. \
+\>", "Text",
+ CellChangeTimes->{{3.7590774015787897`*^9, 3.759077457395862*^9}, {
+  3.7590776896075277`*^9, 3.7590777281190157`*^9}, {3.759077992157838*^9, 
+  3.75907816570393*^9}},ExpressionUUID->"ce47bbe9-244a-4154-8ca3-\
+a27240ac7f88"],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{
+  3.7590793673050222`*^9},ExpressionUUID->"ff4ea2b3-78fa-4825-8b69-\
+f3364f402a22"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Median", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "smrtniizidi2014", ",", "smrtniizidi2015", ",", "smrtniizidi2016", ",", 
+    "smrtniizidi2017", ",", "smrtniizidi2018"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7590779592447844`*^9, 3.759077985894113*^9}, {
+  3.759079226702375*^9, 
+  3.759079266529738*^9}},ExpressionUUID->"8ee1791c-466c-4b54-9ba3-\
+9a3293f2ba3c"],
+
+Cell[BoxData["108"], "Output",
+ CellChangeTimes->{
+  3.7590792671836843`*^9},ExpressionUUID->"f20cb8c0-1047-4a7f-a007-\
+c90890bc2ae6"]
+}, Open  ]],
+
+Cell["\<\
+Glede na podatke o smrtnih izidih sem izra\[CHacek]unala Mediano. Ta zna\
+\[SHacek]a 108. 
+\
+\>", "Text",
+ CellChangeTimes->{{3.7590792833349543`*^9, 3.759079306798586*^9}, {
+  3.759079361391624*^9, 
+  3.759079384544189*^9}},ExpressionUUID->"9cf16643-478d-42f1-9148-\
+1fc440688382"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["\[CapitalSHacek]TEVILO PO\[CapitalSHacek]KODOVANIH",
+ FontSize->20]], "Title",
+ CellChangeTimes->{{3.759078253991295*^9, 
+  3.759078266862062*^9}},ExpressionUUID->"0c5625f5-f088-462d-aaff-\
+4b5651381218"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"po\[SHacek]kodovani2014", "=", "8220"}], "\[IndentingNewLine]", 
+ RowBox[{"po\[SHacek]kodovani2015", "=", "8710"}], "\[IndentingNewLine]", 
+ RowBox[{"po\[SHacek]kodovani2016", "=", "8456"}], "\[IndentingNewLine]", 
+ RowBox[{"po\[SHacek]kodovani2017", "=", "7901"}], "\[IndentingNewLine]", 
+ RowBox[{"po\[SHacek]kodovani2018", "=", "7613"}]}], "Input",
+ CellChangeTimes->{{3.7590782820567703`*^9, 
+  3.759078325636127*^9}},ExpressionUUID->"323316be-a787-4668-8a37-\
+688fb6ba0af1"],
+
+Cell[BoxData["8220"], "Output",
+ CellChangeTimes->{
+  3.759078326581449*^9},ExpressionUUID->"01bca416-319a-44ff-9d32-\
+e5d894b516e4"],
+
+Cell[BoxData["8710"], "Output",
+ CellChangeTimes->{
+  3.759078326585826*^9},ExpressionUUID->"00d4bdca-eb9c-4d7f-a597-\
+3bd8799e47cb"],
+
+Cell[BoxData["8456"], "Output",
+ CellChangeTimes->{
+  3.7590783265899353`*^9},ExpressionUUID->"6506f711-e1fd-48fb-a3bc-\
+ac7a1fc12867"],
+
+Cell[BoxData["7901"], "Output",
+ CellChangeTimes->{
+  3.759078326596838*^9},ExpressionUUID->"81f47ac0-31c8-48cb-abe7-\
+eed3b043a31f"],
+
+Cell[BoxData["7613"], "Output",
+ CellChangeTimes->{
+  3.75907832660432*^9},ExpressionUUID->"f981bca5-9386-4a66-8e8c-a822f92f3751"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListLinePlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "po\[SHacek]kodovani2014", ",", "po\[SHacek]kodovani2015", ",", 
+     "po\[SHacek]kodovani2016", ",", "po\[SHacek]kodovani2017", ",", 
+     "po\[SHacek]kodovani2018"}], "}"}], ",", " ", 
+   RowBox[{"Filling", "\[Rule]", "Axis"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"RGBColor", "[", 
+     RowBox[{"0.62", ",", "0.89", ",", "0.5"}], "]"}]}], ",", 
+   RowBox[{"PlotLabels", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Placed", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<high\>\"", ",", "\"\<low\>\""}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Above", ",", " ", "Below"}], "}"}]}], "]"}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.759078342246724*^9, 
+  3.75907837827824*^9}},ExpressionUUID->"d3c194b5-b800-4fd8-a977-\
+720a17f451a9"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   GraphicsComplexBox[{{1., 8220.}, {2., 8710.}, {3., 8456.}, {4., 7901.}, {
+    5., 7613.}, {1., 7558.1500000000015`}, {5., 7558.1500000000015`}}, {{{}, 
+      {RGBColor[0.62, 0.89, 0.5], Opacity[0.2], EdgeForm[None], 
+       GraphicsGroupBox[
+        PolygonBox[{{1, 6, 7, 5, 4, 3, 2}}]]}, {}, {}}, {{}, {}, 
+      {RGBColor[0.62, 0.89, 0.5], PointSize[0.019444444444444445`], 
+       AbsoluteThickness[1.6], LineBox[{1, 2, 3, 4, 5}]}}}], {{}, {
+     InsetBox["\<\"high\"\>", Offset[{0, 2}, {2., 8710.}], 
+      ImageScaled[{0.5, 0}]], 
+     InsetBox["\<\"low\"\>", Offset[{0, -2}, {5., 7613.}], 
+      ImageScaled[{1, 1}]]}}, {{}, {}}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 7558.1500000000015`},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 5.}, {7613., 8710.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.04305555555555554]}, {
+     Scaled[0.126668872767458], 
+     Scaled[0.13347150392467946`]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.759078381158226*^9},ExpressionUUID->"cc2cb814-3300-45f7-8d44-\
+e8e6c310c965"]
+}, Open  ]],
+
+Cell["\<\
+Zeleni graf prikazuje \[SHacek]tevilo po\[SHacek]kodovanih v prometnih nesre\
+\[CHacek]ah. Leta 2014 je bilo po\[SHacek]kodovancev 8220, leto kasneje 8710. \
+Leta 2016 jih je bilo 8456, nato 7901 in lansko leto najmanj, 7613. Razbrano \
+glede na graf je leta 2015 bilo najvi\[SHacek]jo \[SHacek]tevilo \
+po\[SHacek]kodovanih, najni\[ZHacek]je leta 2018. 
+
+V letu 2018 je bilo manj po\[SHacek]kodovanih za kar -7, 4 % kot v letu 2014, \
+ter -3, 6 % kot v letu 2017. 
+
+Glede na celotno do sedanjo statistiko lahko ugotovimo, da je kljub visokemu \
+\[SHacek]tevilu prometnih nesre\[CHacek] v letu 2018 bilo nekoliko manj\
+\[SHacek]e \[SHacek]tevilo smrtnih izidov ter po\[SHacek]kodovanih. \
+\>", "Text",
+ CellChangeTimes->{{3.759078393446947*^9, 3.759078549360704*^9}, {
+  3.7590787460699043`*^9, 
+  3.759078923374617*^9}},ExpressionUUID->"91dd0fe1-36dc-4ada-93c9-\
+a445f8182841"],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{
+  3.759079524730282*^9},ExpressionUUID->"68ef283a-8167-49fb-a231-\
+5b5cc4fec9c9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeometricMean", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "po\[SHacek]kodovani2014", ",", "po\[SHacek]kodovani2015", ",", 
+    "po\[SHacek]kodovani2016", ",", "po\[SHacek]kodovani2017", ",", 
+    "po\[SHacek]kodovani2018"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759079046634466*^9, 3.759079047306671*^9}, {
+  3.759079401336734*^9, 
+  3.7590794491765738`*^9}},ExpressionUUID->"6e7b865e-cb20-46b2-b14b-\
+971f440aec41"],
+
+Cell[BoxData[
+ RowBox[{"2", " ", 
+  SuperscriptBox["5", 
+   RowBox[{"2", "/", "5"}]], " ", 
+  SuperscriptBox["45520062684684042", 
+   RowBox[{"1", "/", "5"}]]}]], "Output",
+ CellChangeTimes->{
+  3.7590794537496758`*^9},ExpressionUUID->"07c1defc-c894-40ff-9d69-\
+29876270826a"]
+}, Open  ]],
+
+Cell["\<\
+Z zgornjo funkcijo sem izra\[CHacek]unala geometrijsko sredino vrednosti med \
+danimi podatki o po\[SHacek]kodovanih.\
+\>", "Text",
+ CellChangeTimes->{{3.759079482031081*^9, 
+  3.759079521406369*^9}},ExpressionUUID->"dba5e5d9-ef34-40f1-93f4-\
+602c8f579f67"],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{
+  3.759081914396397*^9},ExpressionUUID->"532c2611-4fce-4d20-9194-\
+fb87b1b7a84b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["VZROKI PROMETNIH NESRE\[CapitalCHacek]",
+ FontSize->20]], "Title",
+ CellChangeTimes->{{3.759079608519158*^9, 3.7590796314700623`*^9}, {
+  3.759079743378263*^9, 
+  3.759079744656391*^9}},ExpressionUUID->"541e0a13-1993-4c39-bf5b-\
+922e56557c98"],
+
+Cell["\<\
+Za vzroke prometnih nesre\[CHacek] navajamo veliko razli\[CHacek]nih dejanj. \
+Poznamo dejavnike, na katere ne moremo vplivati. To so naravni pojavi in so \
+lahko dejavnost vremena, potresov, raznih sunkov, zemeljskih in \
+sne\[ZHacek]nih plazov, poledica cesti\[SHacek]\[CHacek]a itd. Na \
+\[ZHacek]alost pa na prometne nesre\[CHacek]e vplivajo tudi drugi dejavniki, \
+ki so odraz posameznika. Voznik je lahko povzro\[CHacek]itelj nesre\[CHacek]e \
+v raznih stanjih. Ena izmed teh je alkoholiziranost, ali ostale prepoedane \
+substance, velikokrat je razlog tudi v neprilagojeni hitrosti, kjer voznik la\
+\[ZHacek]je zgubi kontrolo nad vozilom in tako povzro\[CHacek]i \
+nesre\[CHacek]o. Velikokrat na izid vplivajo tudi izku\[SHacek]nje, saj imajo \
+mladostniki, ki so komaj naredili izpit, veliko manj izku\[SHacek]enj na \
+cesti in v takih primerah mnogokrat ne reagirajo pravilno. Vzrokov za \
+nastanek prometnih nesre\[CHacek] je veliko, dosti pa lahko storimo tudi \
+sami, da posku\[SHacek]amo to prepre\[CHacek]iti. 
+
+Odstotek pozitivnih strokovnih pregledov na alkohol povzro\[CHacek]iteljev \
+prometnih nesre\[CHacek] s smrtnim izidom se v obdobju 2011 do 2017 giblje \
+med 31 in 45 odstotki, leta 2017 pa zna\[SHacek]a 37 odstotkov. 
+Z aritmeti\[CHacek]no sredino bom izra\[CHacek]unala, koliko je povpre\
+\[CHacek]no odstotkov pozitivnih pregledov na alkohol med leti 2011 in 2017.\
+\>", "Text",
+ CellChangeTimes->{{3.759079747687929*^9, 3.7590798588194523`*^9}, {
+  3.759079898136827*^9, 3.7590799215242767`*^9}, {3.7590799610353928`*^9, 
+  3.759080226576302*^9}, {3.7590803579179287`*^9, 3.759080358440974*^9}, {
+  3.7590804782090073`*^9, 
+  3.759080592894538*^9}},ExpressionUUID->"91c530a9-c895-440b-910c-\
+f9f6e35b0205"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"odstotek1", "=", "31"}], "\[IndentingNewLine]", 
+ RowBox[{"odstotek2", " ", "=", "45"}]}], "Input",
+ CellChangeTimes->{{3.759080613779615*^9, 
+  3.759080624145495*^9}},ExpressionUUID->"381799dc-0a81-40a7-ab3b-\
+ba78b5106ecc"],
+
+Cell[BoxData["31"], "Output",
+ CellChangeTimes->{
+  3.759080624808524*^9},ExpressionUUID->"a53e4502-3f7a-4a2c-8e84-\
+11eab2e9cff6"],
+
+Cell[BoxData["45"], "Output",
+ CellChangeTimes->{
+  3.7590806248129587`*^9},ExpressionUUID->"9e840dc0-8577-4652-95c7-\
+004cf64e2677"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Mean", "[", 
+  RowBox[{"{", 
+   RowBox[{"odstotek1", ",", "odstotek2"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759080627066555*^9, 
+  3.7590806373753023`*^9}},ExpressionUUID->"46815744-ff32-40d5-a589-\
+e636f17afe00"],
+
+Cell[BoxData["38"], "Output",
+ CellChangeTimes->{
+  3.7590806379364862`*^9},ExpressionUUID->"f6051dc0-f41b-46a1-b63a-\
+9c66b6858b44"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["POSLEDICE PROMETNIH NESRE\[CapitalCHacek]",
+ FontSize->20]], "Title",
+ CellChangeTimes->{{3.759080807445047*^9, 
+  3.7590808287862473`*^9}},ExpressionUUID->"6225be72-8121-4796-871e-\
+281d2fbb4eb7"],
+
+Cell["\<\
+Posledice prometnih nesre\[CHacek] so lahko morfolo\[SHacek]ke/anatomske \
+(trajne deformacije, manjkajo\[CHacek]i deli telesa), funkcionalne (nevrolo\
+\[SHacek]ki izpadi, omejena gibljivost, moteno delovanje organov) in \
+\[CHacek]asovne (odsotnost od dru\[ZHacek]ine/dela, nemo\[ZHacek]nost \
+ukvarjanja z ostalimi dejavnostmi). Kot ena najhuj\[SHacek]ih oblik posledic \
+pa so psiholo\[SHacek]ke posledice (ob zigubi bli\[ZHacek]njih ali kot povzro\
+\[CHacek]itelj nesre\[CHacek]e). \
+\>", "Text",
+ CellChangeTimes->{{3.759080853547261*^9, 3.759081023431795*^9}, {
+  3.759081125000325*^9, 
+  3.7590811350646133`*^9}},ExpressionUUID->"acaa16b6-43ac-45d8-aca5-\
+12a2e4e7c331"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"hudatelesnapo\[SHacek]kodba2014", "=", 
+  "826"}], "\[IndentingNewLine]", 
+ RowBox[{"hudatelesnapo\[SHacek]kodba2015", "=", 
+  "932"}], "\[IndentingNewLine]", 
+ RowBox[{"hudatelesnapo\[SHacek]kodba2016", "=", 
+  "850"}], "\[IndentingNewLine]", 
+ RowBox[{"hudatelesnapo\[SHacek]kodba2017", "=", "851"}]}], "Input",
+ CellChangeTimes->{{3.759081482595447*^9, 
+  3.759081542184498*^9}},ExpressionUUID->"791334dd-f732-4357-a7cc-\
+798d3b252dfa"],
+
+Cell[BoxData["826"], "Output",
+ CellChangeTimes->{
+  3.759081542923106*^9},ExpressionUUID->"bca14dbb-f75d-4981-a92d-\
+380aac00dbeb"],
+
+Cell[BoxData["932"], "Output",
+ CellChangeTimes->{
+  3.759081542927486*^9},ExpressionUUID->"06f381a8-9e1b-4768-a183-\
+73be583383d9"],
+
+Cell[BoxData["850"], "Output",
+ CellChangeTimes->{
+  3.759081542931712*^9},ExpressionUUID->"5f9f4bd0-0e63-4801-a2cb-\
+f132159f3a4b"],
+
+Cell[BoxData["851"], "Output",
+ CellChangeTimes->{
+  3.759081542936419*^9},ExpressionUUID->"50b723d7-c358-4c0e-91b9-\
+eb56c509c54a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"la\[ZHacek]jatelesnapo\[SHacek]kodba2014", "=", 
+  "7394"}], "\[IndentingNewLine]", 
+ RowBox[{"la\[ZHacek]jatelesnapo\[SHacek]kodba2015", "=", 
+  "7778"}], "\[IndentingNewLine]", 
+ RowBox[{"la\[ZHacek]jatelesnapo\[SHacek]kodba2016", "=", 
+  "7606"}], "\[IndentingNewLine]", 
+ RowBox[{"la\[ZHacek]jatelesnapo\[SHacek]kodba2017", "=", "7050"}]}], "Input",\
+
+ CellChangeTimes->{{3.759081547282645*^9, 
+  3.75908158831573*^9}},ExpressionUUID->"fdf75bc6-4fce-4871-91b0-\
+5c8c48b9fed8"],
+
+Cell[BoxData["7394"], "Output",
+ CellChangeTimes->{
+  3.759081589240744*^9},ExpressionUUID->"efd7c2e1-0449-4adf-b01d-\
+eb0c6ecddc4a"],
+
+Cell[BoxData["7778"], "Output",
+ CellChangeTimes->{
+  3.759081589245063*^9},ExpressionUUID->"13c94b01-bca2-41d4-a111-\
+4f84400376b8"],
+
+Cell[BoxData["7606"], "Output",
+ CellChangeTimes->{
+  3.759081589249296*^9},ExpressionUUID->"072ddaec-b530-4bcb-bc30-\
+26e2ecf9c5ba"],
+
+Cell[BoxData["7050"], "Output",
+ CellChangeTimes->{
+  3.759081589253302*^9},ExpressionUUID->"74673118-e97b-4fff-9d2c-\
+9e9c9ff23fd6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ProbabilityPlot", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "hudatelesnapo\[SHacek]kodba2014", ",", "hudatelesnapo\[SHacek]kodba2015", 
+    ",", "hudatelesnapo\[SHacek]kodba2016", ",", 
+    "hudatelesnapo\[SHacek]kodba2017"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.75908161536578*^9, 
+  3.759081634809533*^9}},ExpressionUUID->"cd916def-e7e4-4d14-8740-\
+3673edcf7c5e"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{{}, {}, {}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      0.012833333333333334`], AbsoluteThickness[1.6], Dashing[{0, Small}], 
+      LineBox[{{2.040816326530612*^-8, 2.040816326530612*^-8}, {
+       0.9999999795918367, 0.9999999795918367}}]}}, {{}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      0.012833333333333334`], AbsoluteThickness[1.6], 
+      PointBox[{{0.16691425851237746`, 0.25}, {0.3564860862807359, 0.5}, {
+       0.3658266299512333, 0.75}, {0.9532508082688602, 
+       1.}}]}, {}, {}}}, {}, {}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Epilog->{{}, 
+    StyleBox[
+     LineBox[{{2.040816326530612*^-8, 2.040816326530612*^-8}, {
+      0.9999999795918367, 0.9999999795918367}}], 
+     Directive[
+      RGBColor[0.368417, 0.506779, 0.709798], 
+      AbsoluteThickness[1.6], 
+      Dashing[{0, Small}]], StripOnInput -> False]},
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 1}, {0, 1}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.02]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.7590816373664427`*^9},ExpressionUUID->"9f1ae10b-fef8-41c0-b5fd-\
+fc57b37ab94f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ProbabilityScalePlot", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "la\[ZHacek]jatelesnapo\[SHacek]kodba2014", ",", 
+    "la\[ZHacek]jatelesnapo\[SHacek]kodba2015", ",", 
+    "la\[ZHacek]jatelesnapo\[SHacek]kodba2016", ",", 
+    "la\[ZHacek]jatelesnapo\[SHacek]kodba2017"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759081684643991*^9, 
+  3.759081702289262*^9}},ExpressionUUID->"112ebdd6-277f-4523-8d39-\
+c28013d23d27"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{{}, {}, {}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      0.019444444444444445`], AbsoluteThickness[1.6], Dashing[{0, Small}], 
+      LineBox[{{7092.4695311447285`, 0.0017988278471143815`}, {
+       7821.530468855272, 1.9982011721528856`}}]}}, {{}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      0.019444444444444445`], AbsoluteThickness[1.6], 
+      PointBox[{{7050., 0.0017988278471137154`}, {7394., 
+       0.7111906449255365}, {7606., 1.2888093550744635`}, {7778., 
+       1.9982011721528863`}}]}, {}, {}}}, {}, {}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{7038.625, 0},
+  CoordinatesToolOptions:>{"DisplayFunction" -> ({
+      (#& )[
+       Part[#, 1]], (1 2.^(-1) Erfc[1 2.^(-1) (Sqrt[2.] - Sqrt[2.] #)]& )[
+        Part[#, 2]] 100}& ), "CopiedValueFunction" -> ({
+      (#& )[
+       Part[#, 1]], (1 2.^(-1) Erfc[1 2.^(-1) (Sqrt[2.] - Sqrt[2.] #)]& )[
+        Part[#, 2]] 100}& )},
+  DisplayFunction->Identity,
+  Epilog->{{}, 
+    StyleBox[
+     LineBox[{{7092.4695311447285`, 0.0017988278471143815`}, {
+      7821.530468855272, 1.9982011721528856`}}], 
+     Directive[
+      RGBColor[0.368417, 0.506779, 0.709798], 
+      AbsoluteThickness[1.6], 
+      Dashing[{0, Small}]], StripOnInput -> False]},
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->FrontEndValueCache[{{
+      Charting`ScaledTicks[{"NormalY", "NormalYInverse"}], 
+      Charting`ScaledFrameTicks[
+       Charting`ScaledFrameTicks[{"NormalY", "NormalYInverse"}][
+        SlotSequence[1]], {Identity, Identity}]& }, {
+     Automatic, Automatic}}, {{{{-1.3263478740408408`, 
+        FormBox["1", TraditionalForm]}, {-0.6448536269514729, 
+        FormBox["5", TraditionalForm]}, {-0.28155156554460037`, 
+        FormBox["10", TraditionalForm]}, {0.3255102498039183, 
+        FormBox["25", TraditionalForm]}, {1., 
+        FormBox["50", TraditionalForm]}, {1.6744897501960816`, 
+        FormBox["75", TraditionalForm]}, {2.2815515655446004`, 
+        FormBox["90", TraditionalForm]}, {2.6448536269514733`, 
+        FormBox["95", TraditionalForm]}, {3.3263478740408408`, 
+        FormBox["99", TraditionalForm]}}, {{-1.3263478740408408`, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], 
+         TraditionalForm]}, {-0.6448536269514729, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], 
+         TraditionalForm]}, {-0.28155156554460037`, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm]}, {
+       0.3255102498039183, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm]}, {1., 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm]}, {
+       1.6744897501960816`, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm]}, {
+       2.2815515655446004`, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm]}, {
+       2.6448536269514733`, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm]}, {
+       3.3263478740408408`, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm]}}}, {
+     Automatic, Automatic}}],
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{},
+  PlotRange->{{7050., 7778.}, {0, 1.9982011721528863`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.02]}},
+  Ticks->{
+    Charting`ScaledTicks[{#& , #& }], {{-2.7190164854556804`, 
+      FormBox["0.01`", TraditionalForm]}, {-2.090232306167813, 
+      FormBox["0.1`", TraditionalForm]}, {-1.3263478740408408`, 
+      FormBox["1.`", TraditionalForm]}, {-0.28155156554460037`, 
+      FormBox["10.`", TraditionalForm]}, {1., 
+      FormBox["50.`", TraditionalForm]}, {2.2815515655446004`, 
+      FormBox["90.`", TraditionalForm]}, {2.6448536269514733`, 
+      FormBox["95.`", TraditionalForm]}, {3.3263478740408408`, 
+      FormBox["99.`", TraditionalForm]}, {4.090232306167846, 
+      FormBox["99.9`", TraditionalForm]}}}]], "Output",
+ CellChangeTimes->{
+  3.759081703006257*^9},ExpressionUUID->"26bb5db6-e5d9-475f-807f-\
+0caea43ceaf0"]
+}, Open  ]],
+
+Cell["\<\
+Pikice na grafih prikazujejo vrendost hudih in la\[ZHacek]jih po\[SHacek]kodb \
+med nesre\[CHacek]ami. Najve\[CHacek] huj\[SHacek]ih po\[SHacek]kodb je bilo \
+leta 2015, najmanj la\[ZHacek]jih telesnih po\[SHacek]kodb pa je bilo leta \
+2014.\
+\>", "Text",
+ CellChangeTimes->{{3.75908171793364*^9, 
+  3.7590818137198687`*^9}},ExpressionUUID->"48686a9c-84e7-4c86-bac2-\
+d9c6a040de34"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["POVZRO\[CapitalCHacek]ITELJI PROMETNIH NESRE\
+\[CapitalCHacek] V LETU 2017",
+ FontSize->20]], "Title",
+ CellChangeTimes->{{3.759082962855023*^9, 
+  3.759082988323032*^9}},ExpressionUUID->"28768754-2cc4-41eb-b1a8-\
+04c1fb772a3c"],
+
+Cell["\<\
+Povzro\[CHacek]itelji v letu 2017 so bili predvsem vozniki osebnih in \
+enoslednih avtomobilov, pe\[SHacek]ci, kolesarji, vozniki tovornih vozil in \
+ostali. Posledice povzro\[CHacek]iteljev voznikov osebnih avtomobilov so bile \
+s smrtnimi izidi, la\[ZHacek]jimi in hujimi telesnimi po\[SHacek]kodbami.
+  
+  VOZNIKI OSEBNIH AVTOMOBILOV :
+  \
+\>", "Text",
+ CellChangeTimes->{{3.759083011164734*^9, 3.75908315610658*^9}, 
+   3.7590831895161448`*^9},ExpressionUUID->"5e9f4506-7bbb-4b2b-b0b3-\
+5c3793c351a1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"smrt", "=", "65"}], "\[IndentingNewLine]", 
+ RowBox[{"hudatelpo\[SHacek]kodba", "=", "433"}], "\[IndentingNewLine]", 
+ RowBox[{"la\[ZHacek]jatelpos\[SHacek]kodba", "=", "5140"}]}], "Input",
+ CellChangeTimes->{{3.7590831622417593`*^9, 
+  3.759083180202989*^9}},ExpressionUUID->"9dfe52d7-fd00-4f41-a693-\
+000718ddde36"],
+
+Cell[BoxData["65"], "Output",
+ CellChangeTimes->{
+  3.7590831810892143`*^9},ExpressionUUID->"bb6621b8-805f-4d6e-8b46-\
+04923b80b681"],
+
+Cell[BoxData["433"], "Output",
+ CellChangeTimes->{
+  3.759083181093677*^9},ExpressionUUID->"664085f3-11ea-4dbf-921a-\
+f7bf05a9318d"],
+
+Cell[BoxData["5140"], "Output",
+ CellChangeTimes->{
+  3.759083181098051*^9},ExpressionUUID->"d9bc43d0-4468-4051-8403-\
+146f6df39f06"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "smrt", ",", "la\[ZHacek]jatelpos\[SHacek]kodba", ",", 
+    "hudatelpo\[SHacek]kodba"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7590833496615887`*^9, 
+  3.7590833662512903`*^9}},ExpressionUUID->"a461d036-cf28-405a-894b-\
+9ec52f662467"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{1., 65.}, {2., 5140.}, {3., 433.}}]}, {}}, {}, {}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 3.}, {0, 5140.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.7590833673042994`*^9},ExpressionUUID->"92577dcb-bee6-4a54-ae7f-\
+fbf938bd58c9"]
+}, Open  ]],
+
+Cell["\<\
+VOZNIKI ENOSLEDNIH MOTORNIH VOZIL:
+\
+\>", "Text",
+ CellChangeTimes->{{3.7590834020883007`*^9, 
+  3.759083419623014*^9}},ExpressionUUID->"3314d62c-4c12-49fc-8562-\
+4d0e4a24f163"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["ClearAll"], "Input",
+ CellChangeTimes->{{3.759083423118437*^9, 
+  3.759083424900769*^9}},ExpressionUUID->"fd079098-7bfa-48c8-b14e-\
+9d01342e978a"],
+
+Cell[BoxData["ClearAll"], "Output",
+ CellChangeTimes->{
+  3.759083425356686*^9},ExpressionUUID->"6a9497b6-fa33-4b96-8835-\
+c819b617d3f3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"smrtmotornihvozil", "=", "22"}], "\[IndentingNewLine]", 
+ RowBox[{"hudatelpo\[SHacek]", "=", "148"}], "\[IndentingNewLine]", 
+ RowBox[{"la\[ZHacek]jatelpo\[SHacek]", "=", "407"}]}], "Input",
+ CellChangeTimes->{{3.759083427583757*^9, 
+  3.759083458091296*^9}},ExpressionUUID->"2aa8272f-f35e-4fa0-b9f6-\
+66d93585230f"],
+
+Cell[BoxData["22"], "Output",
+ CellChangeTimes->{
+  3.759083458623231*^9},ExpressionUUID->"47653482-a6e4-46c8-981c-\
+daf45390a047"],
+
+Cell[BoxData["148"], "Output",
+ CellChangeTimes->{
+  3.7590834586280117`*^9},ExpressionUUID->"5ee8f100-ad42-44de-8272-\
+0f4cbfa46e9d"],
+
+Cell[BoxData["407"], "Output",
+ CellChangeTimes->{
+  3.759083458632071*^9},ExpressionUUID->"57cab360-4175-4958-9e0e-\
+e201997f7638"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "smrtmotornihvozil", ",", "la\[ZHacek]jatelpo\[SHacek]", ",", 
+    "hudatelpo\[SHacek]"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759083472853043*^9, 
+  3.759083482306765*^9}},ExpressionUUID->"3c89525a-43fe-4787-8112-\
+45d3cc86dc43"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{1., 22.}, {2., 407.}, {3., 148.}}]}, {}}, {}, {}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 3.}, {0, 407.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.75908348376725*^9},ExpressionUUID->"ae824c19-a356-4418-9442-eec707a68467"]
+}, Open  ]],
+
+Cell["\<\
+
+PE\[CapitalSHacek]CI:\
+\>", "Text",
+ CellChangeTimes->{{3.759083494877393*^9, 
+  3.759083500380005*^9}},ExpressionUUID->"f9d11ccc-6749-4f02-8bf4-\
+1a85bc4483b7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"smrtpe\[SHacek]cev", "=", "1"}], "\[IndentingNewLine]", 
+ RowBox[{"la\[ZHacek]jepo\[SHacek]kodovani", "=", 
+  "80"}], "\[IndentingNewLine]", 
+ RowBox[{"hujepo\[SHacek]kodovani", "=", "25"}]}], "Input",
+ CellChangeTimes->{{3.759083510095477*^9, 
+  3.759083557068973*^9}},ExpressionUUID->"7c8ba8c4-2c8d-4288-b369-\
+badd3cf622d4"],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{{3.7590835329043417`*^9, 
+  3.759083557576124*^9}},ExpressionUUID->"e50c2a40-98c6-4f99-a4f1-\
+311826ab1617"],
+
+Cell[BoxData["80"], "Output",
+ CellChangeTimes->{{3.7590835329043417`*^9, 
+  3.759083557589692*^9}},ExpressionUUID->"da8ebea7-22f8-429c-a8cf-\
+acb6e121293b"],
+
+Cell[BoxData["25"], "Output",
+ CellChangeTimes->{{3.7590835329043417`*^9, 
+  3.759083557600478*^9}},ExpressionUUID->"6d70a91f-9d70-4a52-a978-\
+154a5087e963"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "smrtpe\[SHacek]cev", ",", "la\[ZHacek]jepo\[SHacek]kodovani", ",", 
+    "hujepo\[SHacek]kodovani"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759083544532251*^9, 
+  3.759083560408712*^9}},ExpressionUUID->"1d2a7a23-f32d-49ca-8528-\
+13fa49ac2a88"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{1., 1.}, {2., 80.}, {3., 25.}}]}, {}}, {}, {}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 3.}, {0, 80.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.75908356099216*^9},ExpressionUUID->"16f35700-665c-4810-9435-61bc25df7570"]
+}, Open  ]],
+
+Cell["KOLESARJI :", "Text",
+ CellChangeTimes->{{3.759083776125347*^9, 
+  3.759083782136857*^9}},ExpressionUUID->"4c29b7cb-8cb0-4fa0-a217-\
+424913390f93"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"smrtkolesarjev", "=", "4"}], "\[IndentingNewLine]", 
+ RowBox[{"la\[ZHacek]jepo\[SHacek]kolesarji", "=", 
+  "478"}], "\[IndentingNewLine]", 
+ RowBox[{"hujepo\[SHacek]kolesarji", "=", "131"}]}], "Input",
+ CellChangeTimes->{{3.759083792684379*^9, 3.759083819298972*^9}, {
+  3.7590838595361032`*^9, 
+  3.759083860911243*^9}},ExpressionUUID->"33bf3662-a56b-44f6-81c1-\
+7962c4bf27a7"],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{{3.7590838201616087`*^9, 3.7590838320946074`*^9}, 
+   3.7590838640880947`*^9},ExpressionUUID->"78d2df72-3095-423a-b90d-\
+112733b72342"],
+
+Cell[BoxData["478"], "Output",
+ CellChangeTimes->{{3.7590838201616087`*^9, 3.7590838320946074`*^9}, 
+   3.759083864134819*^9},ExpressionUUID->"cb7fcc5f-69ca-4fe9-9580-\
+2328f39c597b"],
+
+Cell[BoxData["131"], "Output",
+ CellChangeTimes->{{3.7590838201616087`*^9, 3.7590838320946074`*^9}, 
+   3.759083864170079*^9},ExpressionUUID->"72bf9f1e-30fd-4b9b-a010-\
+46951fc70ea3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "smrtkolesarjev", ",", "la\[ZHacek]jepo\[SHacek]kolesarji", ",", 
+    "hujepo\[SHacek]kolesarji"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759083844535551*^9, 
+  3.7590838698097687`*^9}},ExpressionUUID->"3794da81-ccda-4a81-9bed-\
+c4fce0017b9b"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{1., 4.}, {2., 478.}, {3., 131.}}]}, {}}, {}, {}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 3.}, {0, 478.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.759083870998571*^9},ExpressionUUID->"ed8205e9-faff-4bac-b768-\
+88333506df9d"]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{{3.759084445410122*^9, 3.759084448293906*^9}, 
+   3.759084857056554*^9},ExpressionUUID->"163f9ed7-8205-413f-8c3b-\
+5c86507617ce"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["VIRI",
+ FontSize->24]], "Title",
+ CellChangeTimes->{{3.759084671554235*^9, 
+  3.759084675801957*^9}},ExpressionUUID->"fe47c6ea-8081-4238-ab9d-\
+d150c40fbd53"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4347895/\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7590847474124813`*^9, 
+  3.759084755556884*^9}},ExpressionUUID->"3c913a07-111f-40a7-9002-\
+f6bcce9fcedf"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4347895/\"",
+   "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4347895/"},
+  "HyperlinkURL"]], "Output",
+ CellChangeTimes->{
+  3.759084758319256*^9},ExpressionUUID->"6378b4b4-8a45-4e97-bb32-\
+8eac87aedccf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<http://www.mzi.gov.si/fileadmin/mzi.gov.si/pageuploads/DP_varnost_cp/\
+Elaborat.pdf\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.759084760940323*^9, 
+  3.759084777291078*^9}},ExpressionUUID->"c66037b4-8c79-46af-ac6b-\
+ae7d9506ee3d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "\"http://www.mzi.gov.si/fileadmin/mzi.gov.si/pageuploads/DP_varnost_cp/\
+Elaborat.pdf\"",
+   "http://www.mzi.gov.si/fileadmin/mzi.gov.si/pageuploads/DP_varnost_cp/\
+Elaborat.pdf"},
+  "HyperlinkURL"]], "Output",
+ CellChangeTimes->{
+  3.759084778423441*^9},ExpressionUUID->"2f4d9e05-da3d-4f6a-ab23-\
+a2d9cea9c73b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hyperlink", "[", 
+  "\"\<https://www.avp-rs.si/wp-content/uploads/2012/02/Analiza-in-pregled-\
+stanja-varnosti-cestnega-prometa_SEPTEMBER_20151.pdf\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.759084823142832*^9, 
+  3.75908483229161*^9}},ExpressionUUID->"5c3fe67d-f71f-45c3-b61e-\
+1ad92022a156"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "\"https://www.avp-rs.si/wp-content/uploads/2012/02/Analiza-in-pregled-\
+stanja-varnosti-cestnega-prometa_SEPTEMBER_20151.pdf\"",
+   "https://www.avp-rs.si/wp-content/uploads/2012/02/Analiza-in-pregled-\
+stanja-varnosti-cestnega-prometa_SEPTEMBER_20151.pdf"},
+  "HyperlinkURL"]], "Output",
+ CellChangeTimes->{
+  3.7590848329744787`*^9},ExpressionUUID->"ae3b9873-c46f-43ad-8a86-\
+7e85d082072b"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{Automatic, 34}, {Automatic, 0}},
+FrontEndVersion->"11.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 369, 9, 136, "Title",ExpressionUUID->"45454fa3-faeb-43ef-8fc0-d98c4c8d50ff"],
+Cell[952, 33, 2275, 37, 243, "Text",ExpressionUUID->"4fd7fafb-0195-4e11-876f-3192476a0827"],
+Cell[3230, 72, 324, 6, 46, "Text",ExpressionUUID->"ca84aac7-2d58-4674-a6f7-52cf43a66219"],
+Cell[3557, 80, 175, 3, 30, "Input",ExpressionUUID->"60da36c5-b5cb-4c5a-848d-6c02dbcba80e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3769, 88, 236, 5, 66, "Title",ExpressionUUID->"60157ec6-d965-44ed-927f-4a10909301e2"],
+Cell[CellGroupData[{
+Cell[4030, 97, 604, 10, 136, "Input",ExpressionUUID->"b06766d2-3d37-4929-8c3d-dd37b4eb7751"],
+Cell[4637, 109, 156, 3, 34, "Output",ExpressionUUID->"c790140d-2eed-41a0-b51e-5b5f02a6c0c7"],
+Cell[4796, 114, 156, 3, 34, "Output",ExpressionUUID->"ac44244c-e2cc-44ca-b845-7696b1022902"],
+Cell[4955, 119, 156, 3, 34, "Output",ExpressionUUID->"b874adde-7998-408a-a50a-b8705b6191cf"],
+Cell[5114, 124, 156, 3, 34, "Output",ExpressionUUID->"460ccd71-03bc-4a5a-be5e-1d5e227a87d8"],
+Cell[5273, 129, 156, 3, 34, "Output",ExpressionUUID->"742d0765-f5b5-443b-91d9-5d5e5d33b4d7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5466, 137, 1120, 27, 52, "Input",ExpressionUUID->"35dae181-febd-4000-a641-2b602036457a"],
+Cell[6589, 166, 1866, 46, 225, "Output",ExpressionUUID->"8161db5d-c871-449f-ae9b-4cf9930ca483"]
+}, Open  ]],
+Cell[8470, 215, 152, 3, 30, "Input",ExpressionUUID->"8fe4dd55-fabc-40ca-af0a-a8ae9a539b3d"],
+Cell[8625, 220, 814, 14, 104, "Text",ExpressionUUID->"d3267405-b006-4fd2-9b34-227ee3dd3125"],
+Cell[CellGroupData[{
+Cell[9464, 238, 404, 9, 30, "Input",ExpressionUUID->"3bcfcb97-dff9-4773-9e6e-9f1902268366"],
+Cell[9871, 249, 154, 4, 51, "Output",ExpressionUUID->"95a154d2-58a3-45c7-b4f1-a79fc4530a83"]
+}, Open  ]],
+Cell[10040, 256, 421, 8, 58, "Text",ExpressionUUID->"ed9e25eb-76bf-452d-b52a-fde08ba52db1"],
+Cell[10464, 266, 147, 3, 52, "Input",ExpressionUUID->"070629bf-e39c-4219-b6d1-cac19c93b7a0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10648, 274, 217, 4, 66, "Title",ExpressionUUID->"514448f7-ff39-4e78-afa4-70f603ca2096"],
+Cell[CellGroupData[{
+Cell[10890, 282, 529, 9, 136, "Input",ExpressionUUID->"51094e99-f83d-4ce9-8a26-8d6bf0098028"],
+Cell[11422, 293, 132, 3, 34, "Output",ExpressionUUID->"225e79ee-6927-4637-95e6-39ed346216fb"],
+Cell[11557, 298, 132, 3, 34, "Output",ExpressionUUID->"4fecf11c-56fe-4611-94fa-d249e52944e6"],
+Cell[11692, 303, 134, 3, 34, "Output",ExpressionUUID->"e60eb763-a098-41ca-85f6-98177e076f58"],
+Cell[11829, 308, 134, 3, 34, "Output",ExpressionUUID->"2df29d3a-616e-49c3-ab40-377077317f56"],
+Cell[11966, 313, 128, 2, 34, "Output",ExpressionUUID->"3a74878e-9ef1-45e1-b428-2894fb756203"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12131, 320, 869, 23, 52, "Input",ExpressionUUID->"ce18ae21-0ece-4f30-87be-9c4fccc3e563"],
+Cell[13003, 345, 1777, 45, 232, "Output",ExpressionUUID->"4875a928-7413-4cd9-8fd6-800d33d63db5"]
+}, Open  ]],
+Cell[14795, 393, 720, 13, 104, "Text",ExpressionUUID->"ce47bbe9-244a-4154-8ca3-a27240ac7f88"],
+Cell[15518, 408, 149, 3, 52, "Input",ExpressionUUID->"ff4ea2b3-78fa-4825-8b69-f3364f402a22"],
+Cell[CellGroupData[{
+Cell[15692, 415, 392, 9, 30, "Input",ExpressionUUID->"8ee1791c-466c-4b54-9ba3-9a3293f2ba3c"],
+Cell[16087, 426, 134, 3, 34, "Output",ExpressionUUID->"f20cb8c0-1047-4a7f-a007-c90890bc2ae6"]
+}, Open  ]],
+Cell[16236, 432, 292, 8, 58, "Text",ExpressionUUID->"9cf16643-478d-42f1-9148-1fc440688382"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16565, 445, 228, 4, 66, "Title",ExpressionUUID->"0c5625f5-f088-462d-aaff-4b5651381218"],
+Cell[CellGroupData[{
+Cell[16818, 453, 504, 8, 115, "Input",ExpressionUUID->"323316be-a787-4668-8a37-688fb6ba0af1"],
+Cell[17325, 463, 133, 3, 34, "Output",ExpressionUUID->"01bca416-319a-44ff-9d32-e5d894b516e4"],
+Cell[17461, 468, 133, 3, 34, "Output",ExpressionUUID->"00d4bdca-eb9c-4d7f-a597-3bd8799e47cb"],
+Cell[17597, 473, 135, 3, 34, "Output",ExpressionUUID->"6506f711-e1fd-48fb-a3bc-ac7a1fc12867"],
+Cell[17735, 478, 133, 3, 34, "Output",ExpressionUUID->"81f47ac0-31c8-48cb-abe7-eed3b043a31f"],
+Cell[17871, 483, 130, 2, 34, "Output",ExpressionUUID->"f981bca5-9386-4a66-8e8c-a822f92f3751"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18038, 490, 880, 23, 52, "Input",ExpressionUUID->"d3c194b5-b800-4fd8-a977-720a17f451a9"],
+Cell[18921, 515, 1771, 44, 229, "Output",ExpressionUUID->"cc2cb814-3300-45f7-8d44-e8e6c310c965"]
+}, Open  ]],
+Cell[20707, 562, 888, 17, 150, "Text",ExpressionUUID->"91dd0fe1-36dc-4ada-93c9-a445f8182841"],
+Cell[21598, 581, 147, 3, 52, "Input",ExpressionUUID->"68ef283a-8167-49fb-a231-5b5cc4fec9c9"],
+Cell[CellGroupData[{
+Cell[21770, 588, 444, 10, 30, "Input",ExpressionUUID->"6e7b865e-cb20-46b2-b14b-971f440aec41"],
+Cell[22217, 600, 276, 8, 34, "Output",ExpressionUUID->"07c1defc-c894-40ff-9d69-29876270826a"]
+}, Open  ]],
+Cell[22508, 611, 267, 6, 35, "Text",ExpressionUUID->"dba5e5d9-ef34-40f1-93f4-602c8f579f67"],
+Cell[22778, 619, 147, 3, 52, "Input",ExpressionUUID->"532c2611-4fce-4d20-9194-fb87b1b7a84b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22962, 627, 267, 5, 66, "Title",ExpressionUUID->"541e0a13-1993-4c39-bf5b-922e56557c98"],
+Cell[23232, 634, 1746, 27, 219, "Text",ExpressionUUID->"91c530a9-c895-440b-910c-f9f6e35b0205"],
+Cell[CellGroupData[{
+Cell[25003, 665, 250, 5, 52, "Input",ExpressionUUID->"381799dc-0a81-40a7-ab3b-ba78b5106ecc"],
+Cell[25256, 672, 131, 3, 34, "Output",ExpressionUUID->"a53e4502-3f7a-4a2c-8e84-11eab2e9cff6"],
+Cell[25390, 677, 133, 3, 34, "Output",ExpressionUUID->"9e840dc0-8577-4652-95c7-004cf64e2677"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25560, 685, 248, 6, 30, "Input",ExpressionUUID->"46815744-ff32-40d5-a589-e636f17afe00"],
+Cell[25811, 693, 133, 3, 34, "Output",ExpressionUUID->"f6051dc0-f41b-46a1-b63a-9c66b6858b44"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25993, 702, 221, 4, 66, "Title",ExpressionUUID->"6225be72-8121-4796-871e-281d2fbb4eb7"],
+Cell[26217, 708, 687, 12, 81, "Text",ExpressionUUID->"acaa16b6-43ac-45d8-aca5-12a2e4e7c331"],
+Cell[CellGroupData[{
+Cell[26929, 724, 464, 10, 94, "Input",ExpressionUUID->"791334dd-f732-4357-a7cc-798d3b252dfa"],
+Cell[27396, 736, 132, 3, 34, "Output",ExpressionUUID->"bca14dbb-f75d-4981-a92d-380aac00dbeb"],
+Cell[27531, 741, 132, 3, 34, "Output",ExpressionUUID->"06f381a8-9e1b-4768-a183-73be583383d9"],
+Cell[27666, 746, 132, 3, 34, "Output",ExpressionUUID->"5f9f4bd0-0e63-4801-a2cb-f132159f3a4b"],
+Cell[27801, 751, 132, 3, 34, "Output",ExpressionUUID->"50b723d7-c358-4c0e-91b9-eb56c509c54a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27970, 759, 505, 11, 94, "Input",ExpressionUUID->"fdf75bc6-4fce-4871-91b0-5c8c48b9fed8"],
+Cell[28478, 772, 133, 3, 34, "Output",ExpressionUUID->"efd7c2e1-0449-4adf-b01d-eb0c6ecddc4a"],
+Cell[28614, 777, 133, 3, 34, "Output",ExpressionUUID->"13c94b01-bca2-41d4-a111-4f84400376b8"],
+Cell[28750, 782, 133, 3, 34, "Output",ExpressionUUID->"072ddaec-b530-4bcb-bc30-26e2ecf9c5ba"],
+Cell[28886, 787, 133, 3, 34, "Output",ExpressionUUID->"74673118-e97b-4fff-9d2c-9e9c9ff23fd6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29056, 795, 394, 9, 30, "Input",ExpressionUUID->"cd916def-e7e4-4d14-8740-3673edcf7c5e"],
+Cell[29453, 806, 1896, 50, 247, "Output",ExpressionUUID->"9f1ae10b-fef8-41c0-b5fd-fc57b37ab94f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31386, 861, 441, 10, 30, "Input",ExpressionUUID->"112ebdd6-277f-4523-8d39-c28013d23d27"],
+Cell[31830, 873, 4326, 99, 245, "Output",ExpressionUUID->"26bb5db6-e5d9-475f-807f-0caea43ceaf0"]
+}, Open  ]],
+Cell[36171, 975, 392, 8, 35, "Text",ExpressionUUID->"48686a9c-84e7-4c86-bac2-d9c6a040de34"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36600, 988, 252, 5, 66, "Title",ExpressionUUID->"28768754-2cc4-41eb-b1a8-04c1fb772a3c"],
+Cell[36855, 995, 515, 11, 127, "Text",ExpressionUUID->"5e9f4506-7bbb-4b2b-b0b3-5c3793c351a1"],
+Cell[CellGroupData[{
+Cell[37395, 1010, 342, 6, 73, "Input",ExpressionUUID->"9dfe52d7-fd00-4f41-a693-000718ddde36"],
+Cell[37740, 1018, 133, 3, 34, "Output",ExpressionUUID->"bb6621b8-805f-4d6e-8b46-04923b80b681"],
+Cell[37876, 1023, 132, 3, 34, "Output",ExpressionUUID->"664085f3-11ea-4dbf-921a-f7bf05a9318d"],
+Cell[38011, 1028, 133, 3, 34, "Output",ExpressionUUID->"d9bc43d0-4468-4051-8403-146f6df39f06"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38181, 1036, 314, 8, 30, "Input",ExpressionUUID->"a461d036-cf28-405a-894b-9ec52f662467"],
+Cell[38498, 1046, 1250, 36, 241, "Output",ExpressionUUID->"92577dcb-bee6-4a54-ae7f-fbf938bd58c9"]
+}, Open  ]],
+Cell[39763, 1085, 187, 6, 58, "Text",ExpressionUUID->"3314d62c-4c12-49fc-8562-4d0e4a24f163"],
+Cell[CellGroupData[{
+Cell[39975, 1095, 160, 3, 30, "Input",ExpressionUUID->"fd079098-7bfa-48c8-b14e-9d01342e978a"],
+Cell[40138, 1100, 137, 3, 34, "Output",ExpressionUUID->"6a9497b6-fa33-4b96-8835-c819b617d3f3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40312, 1108, 341, 6, 73, "Input",ExpressionUUID->"2aa8272f-f35e-4fa0-b9f6-66d93585230f"],
+Cell[40656, 1116, 131, 3, 34, "Output",ExpressionUUID->"47653482-a6e4-46c8-981c-daf45390a047"],
+Cell[40790, 1121, 134, 3, 34, "Output",ExpressionUUID->"5ee8f100-ad42-44de-8272-0f4cbfa46e9d"],
+Cell[40927, 1126, 132, 3, 34, "Output",ExpressionUUID->"57cab360-4175-4958-9e0e-e201997f7638"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41096, 1134, 312, 8, 30, "Input",ExpressionUUID->"3c89525a-43fe-4787-8112-45d3cc86dc43"],
+Cell[41411, 1144, 1243, 35, 244, "Output",ExpressionUUID->"ae824c19-a356-4418-9442-eec707a68467"]
+}, Open  ]],
+Cell[42669, 1182, 172, 6, 58, "Text",ExpressionUUID->"f9d11ccc-6749-4f02-8bf4-1a85bc4483b7"],
+Cell[CellGroupData[{
+Cell[42866, 1192, 352, 7, 73, "Input",ExpressionUUID->"7c8ba8c4-2c8d-4288-b369-badd3cf622d4"],
+Cell[43221, 1201, 156, 3, 34, "Output",ExpressionUUID->"e50c2a40-98c6-4f99-a4f1-311826ab1617"],
+Cell[43380, 1206, 157, 3, 34, "Output",ExpressionUUID->"da8ebea7-22f8-429c-a8cf-acb6e121293b"],
+Cell[43540, 1211, 157, 3, 34, "Output",ExpressionUUID->"6d70a91f-9d70-4a52-a978-154a5087e963"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43734, 1219, 323, 8, 30, "Input",ExpressionUUID->"1d2a7a23-f32d-49ca-8528-13fa49ac2a88"],
+Cell[44060, 1229, 1239, 35, 247, "Output",ExpressionUUID->"16f35700-665c-4810-9435-61bc25df7570"]
+}, Open  ]],
+Cell[45314, 1267, 153, 3, 35, "Text",ExpressionUUID->"4c29b7cb-8cb0-4fa0-a217-424913390f93"],
+Cell[CellGroupData[{
+Cell[45492, 1274, 403, 8, 73, "Input",ExpressionUUID->"33bf3662-a56b-44f6-81c1-7962c4bf27a7"],
+Cell[45898, 1284, 183, 3, 34, "Output",ExpressionUUID->"78d2df72-3095-423a-b90d-112733b72342"],
+Cell[46084, 1289, 183, 3, 34, "Output",ExpressionUUID->"cb7fcc5f-69ca-4fe9-9580-2328f39c597b"],
+Cell[46270, 1294, 183, 3, 34, "Output",ExpressionUUID->"72bf9f1e-30fd-4b9b-a010-46951fc70ea3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46490, 1302, 323, 8, 30, "Input",ExpressionUUID->"3794da81-ccda-4a81-9bed-c4fce0017b9b"],
+Cell[46816, 1312, 1245, 36, 248, "Output",ExpressionUUID->"ed8205e9-faff-4bac-b768-88333506df9d"]
+}, Open  ]],
+Cell[48076, 1351, 194, 3, 52, "Input",ExpressionUUID->"163f9ed7-8205-413f-8c3b-5c86507617ce"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48307, 1359, 182, 4, 71, "Title",ExpressionUUID->"fe47c6ea-8081-4238-ab9d-d150c40fbd53"],
+Cell[CellGroupData[{
+Cell[48514, 1367, 256, 6, 30, "Input",ExpressionUUID->"3c913a07-111f-40a7-9002-f6bcce9fcedf"],
+Cell[48773, 1375, 284, 7, 36, "Output",ExpressionUUID->"6378b4b4-8a45-4e97-bb32-8eac87aedccf"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49094, 1387, 281, 6, 30, "Input",ExpressionUUID->"c66037b4-8c79-46af-ac6b-ae7d9506ee3d"],
+Cell[49378, 1395, 344, 9, 36, "Output",ExpressionUUID->"2f4d9e05-da3d-4f6a-ab23-a2d9cea9c73b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49759, 1409, 319, 6, 30, "Input",ExpressionUUID->"5c3fe67d-f71f-45c3-b61e-1ad92022a156"],
+Cell[50081, 1417, 424, 9, 36, "Output",ExpressionUUID->"ae3b9873-c46f-43ad-8a86-7e85d082072b"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
